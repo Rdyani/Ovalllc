@@ -16,10 +16,10 @@ export const site = {
     "OVAL is a US-based digital marketing and web development agency. We design high-converting websites and run SEO programs that grow brands across the USA and UK.",
   founded: "2026",
   email: "contant@ovalllc.net",
-  /** Display format */
-  phone: "+1 680 368 344",
+  /** Display format. 307 is the Wyoming area code, matching the address below. */
+  phone: "+1 (307) 449-2355",
   /** E.164, used in schema.org and tel: links */
-  phoneRaw: "+1680368344",
+  phoneRaw: "+13074492355",
   address: {
     street: "30 N Gould St #34910",
     city: "Sheridan",

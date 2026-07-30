@@ -19,12 +19,11 @@ npm run lint    # eslint
 | # | What | Where |
 |---|------|-------|
 | 1 | **Check the email address.** `contant@ovalllc.net` is what was supplied — if that is a typo for `contact@`, fix it here first. | `src/lib/site.ts` |
-| 2 | **Check the phone number.** `+1 680368344` is 9 digits; US numbers need 10, so the `tel:` link will not dial as-is. | `src/lib/site.ts` |
-| 3 | **Confirm the domain.** `ovalllc.net` was inferred from the email. It drives every canonical URL, the sitemap and all JSON-LD IDs. | `src/lib/site.ts` |
-| 4 | **Create the Stripe Payment Links** and add them to `.env.local`. See below. | `.env.example` |
-| 5 | **Have a lawyer review** the privacy policy, terms and refund policy. Good templates, not legal advice. | `src/app/{privacy,terms,refund-policy}/` |
-| 6 | **Add Search Console / Bing verification tokens** | `verification` block in `src/app/layout.tsx` |
-| 7 | Update the social media URLs (currently `/ovalllc` placeholders) | `site.socials` in `src/lib/site.ts` |
+| 2 | **Confirm the domain.** `ovalllc.net` was inferred from the email. It drives every canonical URL, the sitemap and all JSON-LD IDs. | `src/lib/site.ts` |
+| 3 | **Create the Stripe Payment Links** and add them to `.env.local`. See below. | `.env.example` |
+| 4 | **Have a lawyer review** the privacy policy, terms and refund policy. Good templates, not legal advice. | `src/app/{privacy,terms,refund-policy}/` |
+| 5 | **Add Search Console / Bing verification tokens** | `verification` block in `src/app/layout.tsx` |
+| 6 | Update the social media URLs (currently `/ovalllc` placeholders) | `site.socials` in `src/lib/site.ts` |
 
 ---
 
