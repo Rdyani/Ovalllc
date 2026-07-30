@@ -1,26 +1,157 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ---------------------------------------------------------------------------
+   OVAL — design tokens
+   Light base with deep "ink" sections for rhythm, aurora accent gradient.
+   The site commits to a single look; there is no dark-mode variant.
+--------------------------------------------------------------------------- */
+
+@theme {
+  /* Ink — near-black navy used for dark sections and body text */
+  --color-ink-50: #f5f7fa;
+  --color-ink-100: #e8ecf3;
+  --color-ink-200: #cdd6e4;
+  --color-ink-300: #a3b2c9;
+  --color-ink-400: #7287a6;
+  --color-ink-500: #516685;
+  --color-ink-600: #3d506b;
+  --color-ink-700: #2b3b52;
+  --color-ink-800: #1a2637;
+  --color-ink-900: #0e1626;
+  --color-ink-950: #070c17;
+
+  /* Brand — indigo, the primary action colour */
+  --color-brand-50: #eef1ff;
+  --color-brand-100: #e0e5ff;
+  --color-brand-200: #c6ceff;
+  --color-brand-300: #a3aeff;
+  --color-brand-400: #8286fb;
+  --color-brand-500: #6c63f5;
+  --color-brand-600: #5d43e9;
+  --color-brand-700: #5036cd;
+  --color-brand-800: #422fa6;
+  --color-brand-900: #382d83;
+
+  /* Aurora — the secondary accent, used in gradients and highlights */
+  --color-aurora-300: #6ff0cf;
+  --color-aurora-400: #2ee0ae;
+  --color-aurora-500: #12c795;
+  --color-aurora-600: #059f78;
+
+  --color-paper: #ffffff;
+  --color-paper-subtle: #f7f8fb;
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  --radius-4xl: 2rem;
+
+  --shadow-lift: 0 1px 2px rgb(7 12 23 / 0.04), 0 12px 32px -12px rgb(7 12 23 / 0.14);
+  --shadow-lift-lg: 0 1px 2px rgb(7 12 23 / 0.05), 0 28px 60px -20px rgb(7 12 23 / 0.22);
+
+  --animate-marquee: marquee 40s linear infinite;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    /* Offset anchor targets so the sticky header never covers a heading */
+    scroll-padding-top: 6rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink-800);
+    font-family: var(--font-sans);
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Headings carry the brand voice: tight, dark, confident */
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: var(--color-ink-950);
+    letter-spacing: -0.022em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background-color: var(--color-brand-500);
+    color: white;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-brand-600);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+}
+
+@layer components {
+  /* Dark sections invert the heading colour without per-element overrides */
+  .on-ink h1,
+  .on-ink h2,
+  .on-ink h3,
+  .on-ink h4 {
+    color: white;
+  }
+}
+
+@utility container-page {
+  width: 100%;
+  margin-inline: auto;
+  max-width: 80rem;
+  padding-inline: 1.25rem;
+
+  @media (width >= 48rem) {
+    padding-inline: 2rem;
+  }
+}
+
+/* Gradient text used sparingly on hero and section eyebrows */
+@utility text-aurora {
+  background-image: linear-gradient(
+    100deg,
+    var(--color-brand-400) 0%,
+    var(--color-aurora-400) 55%,
+    var(--color-brand-300) 100%
+  );
+  background-clip: text;
+  color: transparent;
+}
+
+/* Subtle grid backdrop for dark hero sections */
+@utility bg-grid {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.045) 1px, transparent 1px);
+  background-size: 64px 64px;
 }
