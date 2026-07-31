@@ -140,7 +140,7 @@ gtag('config', '${site.gaId}');`}
             </button>
             <a
               href="/privacy"
-              className="ml-auto text-sm text-ink-400 underline underline-offset-4 transition-colors hover:text-white"
+              className="ml-auto inline-flex min-h-6 items-center text-sm text-ink-300 underline underline-offset-4 transition-colors hover:text-white"
             >
               Privacy policy
             </a>

@@ -152,7 +152,7 @@ export default async function BlogPostPage({ params }: PageProps<"/blog/[slug]">
             <nav aria-labelledby="toc-heading">
               <h2
                 id="toc-heading"
-                className="mb-4 font-mono text-xs uppercase tracking-[0.18em] text-ink-400"
+                className="mb-4 font-mono text-xs uppercase tracking-[0.18em] text-ink-500"
               >
                 On this page
               </h2>
@@ -183,7 +183,7 @@ export default async function BlogPostPage({ params }: PageProps<"/blog/[slug]">
           </div>
 
           <div>
-            <h2 className="mb-4 font-mono text-xs uppercase tracking-[0.18em] text-ink-400">
+            <h2 className="mb-4 font-mono text-xs uppercase tracking-[0.18em] text-ink-500">
               Related services
             </h2>
             <ul className="flex flex-col gap-2">

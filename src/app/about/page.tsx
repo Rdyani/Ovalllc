@@ -224,7 +224,9 @@ export default function AboutPage() {
             />
             <div className="mt-2 flex flex-col items-center gap-3 sm:flex-row">
               <ArrowLink href="/contact">Send us a question</ArrowLink>
-              <span className="hidden text-ink-300 sm:inline">·</span>
+              <span aria-hidden="true" className="hidden text-ink-400 sm:inline">
+                ·
+              </span>
               <ArrowLink href="/pricing">See what it costs</ArrowLink>
             </div>
           </div>

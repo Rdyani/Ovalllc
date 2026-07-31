@@ -145,7 +145,7 @@ export default function ServicesPage() {
                   <Icon name={stage.icon} size={21} />
                 </span>
                 <div>
-                  <p className="font-mono text-xs uppercase tracking-[0.18em] text-ink-400">
+                  <p className="font-mono text-xs uppercase tracking-[0.18em] text-ink-500">
                     {stage.phase}
                   </p>
                   <h3 className="mt-2 text-xl font-semibold">{stage.title}</h3>

@@ -19,7 +19,7 @@ const budgets = [
 const timelines = ["ASAP", "Next 2–4 weeks", "Next 1–3 months", "Just exploring"];
 
 const inputClass =
-  "w-full rounded-xl border-0 bg-white px-4 py-3 text-ink-900 ring-1 ring-inset ring-ink-200 transition-shadow placeholder:text-ink-400 focus:ring-2 focus:ring-inset focus:ring-brand-500";
+  "w-full rounded-xl border-0 bg-white px-4 py-3 text-ink-900 ring-1 ring-inset ring-ink-200 transition-shadow placeholder:text-ink-500 focus:ring-2 focus:ring-inset focus:ring-brand-500";
 
 const labelClass = "mb-2 block text-sm font-medium text-ink-800";
 

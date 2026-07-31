@@ -14,6 +14,14 @@ const companyLinks = [
   { label: "Contact", href: "/contact" },
 ];
 
+/**
+ * The legal row sits at 14px, so its links would only be ~20px tall on their
+ * own. min-h-6 pads each one out to the 24x24 minimum in WCAG 2.5.8 — Lighthouse
+ * flags this row otherwise, since wrapped lines put two targets 20px apart.
+ */
+const legalLinkClass =
+  "inline-flex min-h-6 items-center transition-colors hover:text-ink-800";
+
 const socialLinks: Array<{ label: string; href: string; icon: IconName }> = [
   { label: "LinkedIn", href: site.socials.linkedin, icon: "linkedin" },
   { label: "X", href: site.socials.x, icon: "x" },
@@ -89,7 +97,7 @@ export function SiteFooter() {
         {/* Location links kept in the footer for internal linking depth */}
         <div className="mt-14 grid gap-8 border-t border-ink-200/70 pt-10 sm:grid-cols-2">
           <div>
-            <h3 className="mb-3 font-mono text-xs uppercase tracking-[0.18em] text-ink-400">
+            <h3 className="mb-3 font-mono text-xs uppercase tracking-[0.18em] text-ink-500">
               United States
             </h3>
             <ul className="flex flex-wrap gap-x-5 gap-y-2">
@@ -106,7 +114,7 @@ export function SiteFooter() {
             </ul>
           </div>
           <div>
-            <h3 className="mb-3 font-mono text-xs uppercase tracking-[0.18em] text-ink-400">
+            <h3 className="mb-3 font-mono text-xs uppercase tracking-[0.18em] text-ink-500">
               United Kingdom
             </h3>
             <ul className="flex flex-wrap gap-x-5 gap-y-2">
@@ -129,18 +137,18 @@ export function SiteFooter() {
             <p>
               © {year} {site.legalName}. All rights reserved.
             </p>
-            <p className="flex flex-wrap gap-x-4">
-              <Link href="/privacy" className="transition-colors hover:text-ink-800">
+            <p className="flex flex-wrap items-center gap-x-5 gap-y-1">
+              <Link href="/privacy" className={legalLinkClass}>
                 Privacy policy
               </Link>
-              <Link href="/terms" className="transition-colors hover:text-ink-800">
+              <Link href="/terms" className={legalLinkClass}>
                 Terms of service
               </Link>
-              <Link href="/refund-policy" className="transition-colors hover:text-ink-800">
+              <Link href="/refund-policy" className={legalLinkClass}>
                 Refunds
               </Link>
-              <CookieSettingsButton className="text-left transition-colors hover:text-ink-800" />
-              <Link href="/sitemap.xml" className="transition-colors hover:text-ink-800">
+              <CookieSettingsButton className={`${legalLinkClass} text-left`} />
+              <Link href="/sitemap.xml" className={legalLinkClass}>
                 Sitemap
               </Link>
             </p>
@@ -176,7 +184,7 @@ function FooterColumn({
 }) {
   return (
     <div>
-      <h3 className="mb-4 font-mono text-xs uppercase tracking-[0.18em] text-ink-400">
+      <h3 className="mb-4 font-mono text-xs uppercase tracking-[0.18em] text-ink-500">
         {title}
       </h3>
       <ul className="flex flex-col gap-2.5">{children}</ul>

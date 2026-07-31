@@ -90,7 +90,7 @@ export default function BlogPage() {
             <div className="flex flex-col gap-5">
               <div className="flex items-center gap-3">
                 <Badge tone="brand">{featured.category}</Badge>
-                <span className="text-sm text-ink-400">
+                <span className="text-sm text-ink-500">
                   {featured.readingMinutes} min read
                 </span>
               </div>
@@ -109,7 +109,7 @@ export default function BlogPage() {
             </div>
 
             <div className="rounded-2xl bg-paper-subtle p-6 ring-1 ring-ink-100">
-              <p className="font-mono text-xs uppercase tracking-[0.18em] text-ink-400">
+              <p className="font-mono text-xs uppercase tracking-[0.18em] text-ink-500">
                 What&rsquo;s inside
               </p>
               <ul className="mt-4 flex flex-col gap-2.5">

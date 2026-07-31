@@ -171,7 +171,7 @@ export function SiteHeader() {
         >
           <div className="container-page flex flex-col gap-8 py-8">
             <div className="flex flex-col">
-              <p className="mb-3 font-mono text-xs uppercase tracking-[0.18em] text-ink-400">
+              <p className="mb-3 font-mono text-xs uppercase tracking-[0.18em] text-ink-500">
                 Services
               </p>
               {services.map((service) => (
@@ -189,7 +189,7 @@ export function SiteHeader() {
             </div>
 
             <div className="flex flex-col">
-              <p className="mb-3 font-mono text-xs uppercase tracking-[0.18em] text-ink-400">
+              <p className="mb-3 font-mono text-xs uppercase tracking-[0.18em] text-ink-500">
                 Company
               </p>
               {primaryNav
@@ -212,7 +212,7 @@ export function SiteHeader() {
             </div>
 
             <div className="flex flex-col">
-              <p className="mb-3 font-mono text-xs uppercase tracking-[0.18em] text-ink-400">
+              <p className="mb-3 font-mono text-xs uppercase tracking-[0.18em] text-ink-500">
                 Where we work
               </p>
               <div className="flex flex-wrap gap-2">

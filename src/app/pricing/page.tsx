@@ -181,8 +181,8 @@ export default function PricingPage() {
                   <p
                     className={
                       entry.featured
-                        ? "font-mono text-xs uppercase tracking-[0.16em] text-ink-500"
-                        : "font-mono text-xs uppercase tracking-[0.16em] text-ink-400"
+                        ? "font-mono text-xs uppercase tracking-[0.16em] text-ink-400"
+                        : "font-mono text-xs uppercase tracking-[0.16em] text-ink-500"
                     }
                   >
                     What&rsquo;s included
@@ -254,7 +254,7 @@ export default function PricingPage() {
 
               <div className="grid gap-8 sm:grid-cols-2">
                 <div>
-                  <h3 className="mb-4 font-mono text-xs uppercase tracking-[0.18em] text-ink-400">
+                  <h3 className="mb-4 font-mono text-xs uppercase tracking-[0.18em] text-ink-500">
                     Typically
                   </h3>
                   <ul className="flex flex-col gap-2.5">
@@ -269,7 +269,7 @@ export default function PricingPage() {
                   </ul>
                 </div>
                 <div>
-                  <h3 className="mb-4 font-mono text-xs uppercase tracking-[0.18em] text-ink-400">
+                  <h3 className="mb-4 font-mono text-xs uppercase tracking-[0.18em] text-ink-500">
                     How it works
                   </h3>
                   <ol className="flex flex-col gap-4">
@@ -318,7 +318,7 @@ export default function PricingPage() {
                   <span className="shrink-0 font-medium tabular-nums text-ink-950">
                     ${addOn.price}
                     {addOn.name.includes("Monthly") ? (
-                      <span className="text-sm font-normal text-ink-400">/mo</span>
+                      <span className="text-sm font-normal text-ink-500">/mo</span>
                     ) : null}
                   </span>
                 </li>
@@ -466,7 +466,7 @@ export default function PricingPage() {
                     </td>
                     <td className="px-6 py-4 text-[0.9375rem] tabular-nums text-ink-700">
                       ${service.startingPrice}
-                      <span className="text-ink-400"> / {service.priceUnit}</span>
+                      <span className="text-ink-500"> / {service.priceUnit}</span>
                     </td>
                     <td className="px-6 py-4 text-[0.9375rem] text-ink-600">
                       {service.timeline}

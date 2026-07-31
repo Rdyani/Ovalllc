@@ -113,7 +113,7 @@ export default function ContactPage() {
 
           <aside className="flex flex-col gap-8 lg:pt-4">
             <div>
-              <h2 className="mb-4 font-mono text-xs uppercase tracking-[0.18em] text-ink-400">
+              <h2 className="mb-4 font-mono text-xs uppercase tracking-[0.18em] text-ink-500">
                 What to expect
               </h2>
               <ol className="flex flex-col gap-5">

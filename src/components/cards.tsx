@@ -34,7 +34,7 @@ export function ServiceCard({ service }: { service: Service }) {
       <div className="flex items-center justify-between border-t border-ink-100 pt-4 text-sm">
         <span className="font-medium text-ink-500">
           From ${service.startingPrice.toLocaleString("en-US")}
-          <span className="text-ink-400">/{service.priceUnit}</span>
+          <span className="text-ink-500">/{service.priceUnit}</span>
         </span>
         <span className="inline-flex items-center gap-1 font-medium text-brand-600">
           Explore
@@ -61,7 +61,7 @@ export function PostCard({ post }: { post: Post }) {
       >
         <div className="flex items-center gap-3 text-sm">
           <Badge tone="brand">{post.category}</Badge>
-          <span className="text-ink-400">{post.readingMinutes} min read</span>
+          <span className="text-ink-500">{post.readingMinutes} min read</span>
         </div>
 
         <h3 className="text-xl font-semibold leading-snug transition-colors group-hover:text-brand-700">
@@ -100,7 +100,7 @@ export function LocationCard({ location }: { location: Location }) {
           <Icon name="pin" size={17} className="text-brand-500" />
           {location.city}
         </span>
-        <span className="font-mono text-xs uppercase tracking-[0.14em] text-ink-400">
+        <span className="font-mono text-xs uppercase tracking-[0.14em] text-ink-500">
           {location.country === "US" ? location.regionCode : "UK"}
         </span>
       </div>

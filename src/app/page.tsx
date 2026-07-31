@@ -231,7 +231,7 @@ export default function HomePage() {
       {/* ------------------------------------------------------------ Audiences */}
       <section className="border-b border-ink-100 bg-white py-10">
         <div className="container-page flex flex-col items-center gap-6">
-          <p className="font-mono text-xs uppercase tracking-[0.18em] text-ink-400">
+          <p className="font-mono text-xs uppercase tracking-[0.18em] text-ink-500">
             Built for small businesses like these
           </p>
           <ul className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
@@ -471,7 +471,7 @@ export default function HomePage() {
 
             <div className="grid gap-8 sm:grid-cols-2">
               <div>
-                <h3 className="mb-4 flex items-center gap-2 font-mono text-xs uppercase tracking-[0.18em] text-ink-400">
+                <h3 className="mb-4 flex items-center gap-2 font-mono text-xs uppercase tracking-[0.18em] text-ink-500">
                   <Icon name="pin" size={14} /> United States
                 </h3>
                 <ul className="flex flex-col gap-2.5">
@@ -488,7 +488,7 @@ export default function HomePage() {
                 </ul>
               </div>
               <div>
-                <h3 className="mb-4 flex items-center gap-2 font-mono text-xs uppercase tracking-[0.18em] text-ink-400">
+                <h3 className="mb-4 flex items-center gap-2 font-mono text-xs uppercase tracking-[0.18em] text-ink-500">
                   <Icon name="pin" size={14} /> United Kingdom
                 </h3>
                 <ul className="flex flex-col gap-2.5">

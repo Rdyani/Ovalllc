@@ -120,7 +120,7 @@ export default async function LocationPage({
 
           <div className="flex flex-col gap-8">
             <div>
-              <h3 className="mb-4 font-mono text-xs uppercase tracking-[0.18em] text-ink-400">
+              <h3 className="mb-4 font-mono text-xs uppercase tracking-[0.18em] text-ink-500">
                 Sectors we focus on in {location.city}
               </h3>
               <ul className="flex flex-wrap gap-2">
@@ -135,7 +135,7 @@ export default async function LocationPage({
             </div>
 
             <div>
-              <h3 className="mb-4 font-mono text-xs uppercase tracking-[0.18em] text-ink-400">
+              <h3 className="mb-4 font-mono text-xs uppercase tracking-[0.18em] text-ink-500">
                 Areas we serve
               </h3>
               <ul className="grid grid-cols-2 gap-x-6 gap-y-2">

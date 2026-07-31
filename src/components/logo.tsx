@@ -30,7 +30,8 @@ export function Logo({
         )}
       >
         OVAL
-        <span className="text-ink-400"> LLC</span>
+        {/* ink-400 clears 4.5:1 on the dark header but not on paper — see globals.css */}
+        <span className={tone === "light" ? "text-ink-500" : "text-ink-400"}> LLC</span>
       </span>
     </Link>
   );
