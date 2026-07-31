@@ -22,6 +22,9 @@ const companyLinks = [
 const legalLinkClass =
   "inline-flex min-h-6 items-center transition-colors hover:text-ink-800";
 
+/** Legal pages are rarely the next click — see the note on FooterLink. */
+const legalPrefetch = false;
+
 const socialLinks: Array<{ label: string; href: string; icon: IconName }> = [
   { label: "LinkedIn", href: site.socials.linkedin, icon: "linkedin" },
   { label: "X", href: site.socials.x, icon: "x" },
@@ -105,6 +108,7 @@ export function SiteFooter() {
                 <li key={location.slug}>
                   <Link
                     href={`/digital-marketing-agency/${location.slug}`}
+                    prefetch={false}
                     className="text-sm text-ink-600 transition-colors hover:text-brand-600"
                   >
                     {location.city}, {location.regionCode}
@@ -122,6 +126,7 @@ export function SiteFooter() {
                 <li key={location.slug}>
                   <Link
                     href={`/digital-marketing-agency/${location.slug}`}
+                    prefetch={false}
                     className="text-sm text-ink-600 transition-colors hover:text-brand-600"
                   >
                     {location.city}
@@ -138,17 +143,17 @@ export function SiteFooter() {
               © {year} {site.legalName}. All rights reserved.
             </p>
             <p className="flex flex-wrap items-center gap-x-5 gap-y-1">
-              <Link href="/privacy" className={legalLinkClass}>
+              <Link href="/privacy" prefetch={legalPrefetch} className={legalLinkClass}>
                 Privacy policy
               </Link>
-              <Link href="/terms" className={legalLinkClass}>
+              <Link href="/terms" prefetch={legalPrefetch} className={legalLinkClass}>
                 Terms of service
               </Link>
-              <Link href="/refund-policy" className={legalLinkClass}>
+              <Link href="/refund-policy" prefetch={legalPrefetch} className={legalLinkClass}>
                 Refunds
               </Link>
               <CookieSettingsButton className={`${legalLinkClass} text-left`} />
-              <Link href="/sitemap.xml" className={legalLinkClass}>
+              <Link href="/sitemap.xml" prefetch={legalPrefetch} className={legalLinkClass}>
                 Sitemap
               </Link>
             </p>
@@ -192,11 +197,21 @@ function FooterColumn({
   );
 }
 
+/**
+ * Every link below this point opts out of prefetching.
+ *
+ * Next prefetches links as they enter the viewport, which for a footer this
+ * size meant ~42KB of RSC payloads fetched for routes the visitor has not
+ * asked for — bytes that compete with the ones Lighthouse measures LCP
+ * against. The Next prefetching guide calls out footers as the case for
+ * prefetch={false}. Navigation still works; it just resolves on click.
+ */
 function FooterLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
     <li>
       <Link
         href={href}
+        prefetch={false}
         className="text-[0.9375rem] text-ink-600 transition-colors hover:text-brand-600"
       >
         {children}
