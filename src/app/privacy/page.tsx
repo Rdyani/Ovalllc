@@ -9,9 +9,14 @@ import { site } from "@/lib/site";
  * (GDPR + UK GDPR + CCPA/CPRA), but it is not legal advice.
  *
  * The sub-processor list names the tools this site actually uses today: Vercel,
- * Resend and Stripe. If you change host, add analytics, or start using a CRM,
- * add it to that list AND to the cookies section — describing processing you do
- * not do is as much of an accuracy problem under GDPR as omitting one you do.
+ * Resend, Stripe and Google Analytics. If you change host, or start collecting
+ * anything new, update this page in the same commit — describing processing you do not do is as much of an
+ * accuracy problem under GDPR as omitting one you do.
+ *
+ * Analytics cookies are gated behind the consent banner in
+ * src/components/cookie-consent.tsx — GTM is not loaded at all until a visitor
+ * accepts. If you ever load a tag outside that gate, this section stops being
+ * true.
  */
 
 export const metadata: Metadata = {
@@ -71,7 +76,8 @@ export default function PrivacyPage() {
       <ul>
         <li>
           <strong>Usage data.</strong> Pages visited, referring source, approximate
-          location derived from IP address, device and browser type.
+          location derived from IP address, device and browser type — collected through
+          Google Analytics, as described under Cookies and analytics below.
         </li>
         <li>
           <strong>Technical data.</strong> IP address and request headers, retained
@@ -84,6 +90,7 @@ export default function PrivacyPage() {
       <ul>
         <li>To reply to your enquiry and, where relevant, quote work for you.</li>
         <li>To deliver a package you have purchased, and to contact you about that order.</li>
+        <li>To understand in aggregate how people find and use this website.</li>
                 <li>To protect the site against spam, abuse and fraudulent submissions.</li>
         <li>To meet legal, accounting and tax obligations.</li>
       </ul>
@@ -103,20 +110,60 @@ export default function PrivacyPage() {
           you or your organisation have engaged us for.
         </li>
         <li>
+          <strong>Consent</strong> — for the analytics cookies described below. Nothing is
+          set until you accept the banner, and you can withdraw consent at any time via
+          the Cookie settings link in the footer.
+        </li>
+        <li>
           <strong>Legal obligation</strong> — for records we are required to retain.
         </li>
       </ul>
 
-      <h2>Cookies and tracking</h2>
+      <h2>Cookies and analytics</h2>
       <p>
-        <strong>This website sets no cookies at all.</strong> There is no analytics
-        package, no advertising pixel, no tracking script and no consent banner, because
-        there is nothing to consent to. You can verify it in your browser&rsquo;s developer
-        tools.
+        This website uses Google Analytics 4 to measure how many people visit and which
+        pages they read. It sets the following cookies:
+      </p>
+      <ul>
+        <li>
+          <strong>_ga</strong> — distinguishes one visitor from another. Expires after
+          two years.
+        </li>
+        <li>
+          <strong>_ga_&lt;container&gt;</strong> — keeps track of a single visit. Expires
+          after two years.
+        </li>
+      </ul>
+      <p>
+        We use this only to see aggregate patterns — which pages are read, how people
+        arrive, which devices they use. We do not use it for advertising, we do not build
+        profiles of individuals, and we have not enabled Google Signals or any
+        ad-personalisation feature.
       </p>
       <p>
-        If we add analytics in future we will update this policy first, and any
-        non-essential cookie will be set only after you agree to it.
+        <strong>These cookies are only set if you agree.</strong> When you first visit, a
+        banner asks whether we may measure how the site is used. Nothing from Google is
+        loaded until you choose Accept — if you decline, or simply ignore the banner, the
+        Google Analytics script is never requested and no analytics cookie is created.
+      </p>
+      <p>
+        You can change your mind whenever you like using the <strong>Cookie settings</strong>{" "}
+        link in the footer of any page, which clears the stored choice and asks again. Your
+        answer is remembered in your browser&rsquo;s local storage rather than in a cookie,
+        so declining really does leave your browser with nothing set by us.
+      </p>
+      <p>
+        You can also block or clear these cookies in your browser at any time, or install
+        Google&rsquo;s{" "}
+        <a
+          href="https://tools.google.com/dlpage/gaoptout"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          opt-out browser add-on
+        </a>
+        . The site works exactly the same without them. No cookie is required for the site
+        to function, and we set none for advertising.
       </p>
 
       <h2>Who we share data with</h2>
@@ -141,11 +188,25 @@ export default function PrivacyPage() {
           </a>{" "}
           for how they handle payment data.
         </li>
+        <li>
+          <strong>Google LLC</strong> (United States) — Google Analytics 4, used to
+          understand how people find and use this site. Processes
+          your IP address (truncated by Google before storage), pages viewed, approximate
+          location, device and browser type, and referring source. See{" "}
+          <a
+            href="https://policies.google.com/privacy"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Google&rsquo;s privacy policy
+          </a>
+          .
+        </li>
       </ul>
       <p>
-        That is the complete list. We do not use analytics, advertising or tracking
-        services on this website, and we do not share your data with anyone else except
-        where legally required, or to establish or defend legal claims.
+        That is the complete list. We do not sell your data or share it with advertising
+        networks, and we do not disclose it to anyone else except where legally required,
+        or to establish or defend legal claims.
       </p>
 
       <h2>International transfers</h2>

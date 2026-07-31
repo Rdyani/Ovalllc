@@ -34,6 +34,18 @@ export const site = {
   areaServed: ["US", "GB"],
   currency: "USD",
   locale: "en_US",
+  /**
+   * Google Analytics 4 measurement ID, loaded via gtag.js.
+   *
+   * Deliberately gtag.js rather than Google Tag Manager. Google's own snippet
+   * warns "only one Google tag per page" — running GTM and gtag together
+   * double-counts every pageview. gtag also works the moment it is deployed,
+   * whereas GTM needs a GA4 tag built inside the GTM dashboard first.
+   *
+   * Loaded only in production, and only after consent — see
+   * src/components/cookie-consent.tsx.
+   */
+  gaId: "G-3VMF3FV0RN",
   /** Where the team works from — Wyoming is Mountain Time */
   timezone: { label: "Mountain Time", abbreviation: "MT" },
   socials: {

@@ -4,6 +4,7 @@ import { usLocations, ukLocations } from "@/lib/locations";
 import { sortedPosts } from "@/lib/posts";
 import { site } from "@/lib/site";
 import { Icon, type IconName } from "./icons";
+import { CookieSettingsButton } from "./cookie-consent";
 import { Logo } from "./logo";
 
 const companyLinks = [
@@ -138,6 +139,7 @@ export function SiteFooter() {
               <Link href="/refund-policy" className="transition-colors hover:text-ink-800">
                 Refunds
               </Link>
+              <CookieSettingsButton className="text-left transition-colors hover:text-ink-800" />
               <Link href="/sitemap.xml" className="transition-colors hover:text-ink-800">
                 Sitemap
               </Link>

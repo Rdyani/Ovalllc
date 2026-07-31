@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+import { CookieConsent } from "@/components/cookie-consent";
 import { JsonLd } from "@/components/json-ld";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -97,6 +98,13 @@ export default function RootLayout({
           {children}
         </main>
         <SiteFooter />
+        {/*
+          Loads Google Analytics only after consent. Google's snippet is
+          meant to sit in <head>, but next/script's afterInteractive places it
+          correctly without blocking hydration, and it must not load at all
+          until a visitor has agreed.
+        */}
+        <CookieConsent />
       </body>
     </html>
   );
